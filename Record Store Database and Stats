@@ -1,0 +1,36 @@
+--Create a record store database
+
+CREATE TABLE Record_Store (id INTEGER PRIMARY KEY, name TEXT, artist TEXT, year INTEGER, price INTEGER);
+INSERT INTO Record_Store 
+VALUES 
+(1, "Abbey Road", "The Beatles", 1969, 20.99),
+(2, "Pet Sounds","The Beach Boys", 1966, 19.99),
+(3, "Disintegration", "The Cure", 1989, 15.99),
+(4, "Aja", "Steely Dan", 1977, 16.99),
+(5, "Souvlaki", "Slowdive", 1993, 15.99),
+(6, "In the Aeroplane Over The Sea", "Neutral Milk Hotel", 1999, 13.99), 
+(7, "All Things Must Pass", "George Harrison", 1970, 25.99),
+(8, "Loveless", "My Bloody Valentine",1991, 18.99),
+(9, "Wish You Were Here", "Pink Floyd", 1975, 19.99),
+(10, "Merriweather Post Pavilion", "Animal Collective", 2009, 16.99),
+(11, "Unknown Pleasures", "Joy Division", 1979, 17.99), 
+(12, "In Rainbows", "Radiohead", 2007, 15.99),
+(13, "Doolittle", "Pixies", 1989, 20.99), 
+(14, "Is This It", "The Strokes",2001, 19.99),
+(15, "Congratulations", "MGMT", 2010, 18.99);
+
+
+
+--display the database ordered by year
+Select * from Record_Store
+ORDER BY year asc;
+
+
+
+--what is the average price of records released before the year 1999?
+SELECT AVG(price) from Record_store WHERE year<1999;
+
+
+
+--show all records from the year 1989
+SELECT * from Record_store where year IN (1989);
