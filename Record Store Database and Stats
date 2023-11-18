@@ -22,15 +22,28 @@ VALUES
 
 
 --display the database ordered by year
-Select * from Record_Store
+SELECT * from Record_Store
 ORDER BY year asc;
 
 
 
 --what is the average price of records released before the year 1999?
-SELECT AVG(price) from Record_store WHERE year<1999;
+SELECT AVG(price) 
+FROM Record_store 
+WHERE year<1999;
 
 
 
 --show all records from the year 1989
-SELECT * from Record_store where year IN (1989);
+SELECT name, artist, year
+FROM Record_store 
+WHERE year IN (1989);
+
+
+
+--show all records that cost more than $16.99
+SELECT *
+FROM Record_store
+WHERE price > 16.99
+ORDER BY price ASC;
+
